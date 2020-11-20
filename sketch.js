@@ -14,7 +14,7 @@ function setup() {
   ground = new Ground(390,300,180,20);
   
   hexagone = new Shooter(100,195,50);
-  slingshot = new Slingshot(hexagone,{x:100,y:195});
+  slingshot = new Slingshot(hexagone.body,{x:100,y:195});
 
   // level 1
   block1 = new Block(330,235,30,40);
@@ -31,13 +31,14 @@ function setup() {
   // level 3
   block9 = new Block(390,155,30,40);
 
+  Engine.update(engine);
 }
 
 function draw() {
   background("black");
   ground.display();
   hexagone.display();
-  slingshot.display()
+  slingshot.display();
 
   // level 1
   block1.display();
@@ -61,4 +62,11 @@ function mouseDragged(){
 
 function mouseReleased(){
   slingshot.fly();
+}
+
+function keyPressed(){
+  if(keyCode === 32){
+    // Matter.Body.setPosition(hexagone.body,{x:100, y:195});
+    slingshot.attach(hexagone.body);
+  }
 }
