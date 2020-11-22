@@ -13,7 +13,7 @@ function setup() {
   
   ground = new Ground(390,300,180,20);
   
-  hexagone = new Shooter(100,195,50);
+  hexagone = new Shooter(100,190,50);
   slingshot = new Slingshot(hexagone.body,{x:100,y:195});
 
   // level 1
@@ -31,7 +31,7 @@ function setup() {
   // level 3
   block9 = new Block(390,155,30,40);
 
-  Engine.update(engine);
+  
 }
 
 function draw() {
@@ -54,6 +54,7 @@ function draw() {
 
   // level 3
   block9.display();
+  Engine.update(engine);
 }
 
 function mouseDragged(){
