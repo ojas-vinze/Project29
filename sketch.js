@@ -67,7 +67,6 @@ function mouseReleased(){
 
 function keyPressed(){
   if(keyCode === 32){
-    Matter.Body.setPosition(hexagone.body,{x:100, y:195});
     slingshot.attach(hexagone.body);
   }
 }
